@@ -4,3 +4,4 @@ streamlit==0.71.0
 requests==2.24.0
 streamlit_folium==0.1.0
 numpy==1.19.2
+tables
