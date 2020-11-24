@@ -35,6 +35,7 @@ dataset_updated=update_data[0][1]
 @st.cache(ttl=3600)
 def dataupdate(dataset_updated):
 	import data_updater
-	return datetime.now().strftime("%d %B %Y, %H:%M:%S")
+	st.write(datetime.now().strftime("%d %B %Y, %H:%M:%S"))
+	pass
 
 st.write(dataupdate(update_data[0][1]))
