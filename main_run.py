@@ -32,12 +32,14 @@ def mapfile(update_data):
 	return source_code
 st.write("Showing data for " + update_data[0][2].strftime("%d %B %Y, %H:%M:%S"))
 components.html(mapfile(update_data[0][0]),height=600)
-st.write("Dataset last updated at " + update_data[0][0].strftime("%d %B %Y, %H:%M:%S"))
+
 #dataset_updated=update_data[0][1]
 #@st.cache(suppress_st_warning=True,ttl=1800)
 def dataupdate():
 	import data_updater
 	#datetime.now().strftime("%d %B %Y, %H:%M:%S")
 	pass
+
 if (datetime.now()-update_data[0][1]).seconds>1000 :
 	dataupdate()
+st.write("Dataset last updated at " + update_data[0][0].strftime("%d %B %Y, %H:%M:%S"))
