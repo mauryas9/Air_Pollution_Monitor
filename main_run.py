@@ -42,7 +42,7 @@ def dataupdate():
 
 if (datetime.now()-update_data[0][1]).seconds>1000 :
 	dataupdate()
-	st.write("Dataset last updated at " + datetime.now().strftime("%d %B %Y, %H:%M:%S"))
+	st.write("Dataset last updated at " + datetime.now().strftime("%d %B %Y, %H:%M:%S") + " UTC")
 else:
-	st.write("Dataset last updated at " + update_data[0][0].strftime("%d %B %Y, %H:%M:%S"))
+	st.write("Dataset last updated at " + update_data[0][0].strftime("%d %B %Y, %H:%M:%S") + " UTC")
 
