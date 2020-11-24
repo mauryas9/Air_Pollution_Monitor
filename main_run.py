@@ -39,5 +39,5 @@ def dataupdate():
 	import data_updater
 	#datetime.now().strftime("%d %B %Y, %H:%M:%S")
 	pass
-if (datetime.now()-datetime.fromtimestamp(1606203195)).seconds>1000 :
+if (datetime.now()-update_data[0][1]).seconds>1000 :
 	dataupdate()
