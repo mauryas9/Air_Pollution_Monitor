@@ -125,6 +125,6 @@ dmypy.json
 .pyre/
 
 # data_assets
-.csv/
-.h5
-.html
+*.csv/
+*.h5/
+*.html
