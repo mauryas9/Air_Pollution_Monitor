@@ -41,8 +41,13 @@ def JSON_Downloader():
 def get_location(station):
 	r=( (stations_df[stations_df['Station']==station][['latitude']].values[0][0]), (stations_df[stations_df['Station']==station][['longitude']].values[0][0]))
 	return r
+
+
+
 def get_popup(station):
 	return pol_recs[pol_recs['station']==station][['pollutant_id','pollutant_min', 'pollutant_avg','pollutant_max']].reset_index(drop=True).set_index('pollutant_id')
+
+
 
 def mapbuilder(pol_recs):
 	# center to the mean of all points
