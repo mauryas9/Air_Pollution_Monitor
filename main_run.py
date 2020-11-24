@@ -33,10 +33,10 @@ def mapfile(update_data):
 st.write("Data updated at " + update_data[0][2].strftime("%d %B %Y, %H:%M:%S"))
 components.html(mapfile(update_data[0][0]),height=600)
 dataset_updated=update_data[0][1]
-@st.cache(ttl=3600)
+@st.cache(suppress_st_warning=True,ttl=1800)
 def dataupdate(dataset_updated):
 	import data_updater
 	st.write(datetime.now().strftime("%d %B %Y, %H:%M:%S"))
 	pass
 
-st.write(dataupdate(update_data[0][1]))
+st.write(dataupdate(update_data[0][0]))
