@@ -28,6 +28,7 @@ print(update_data)
 def mapfile(update_data):
 	HtmlFile = open("map.html", 'r', encoding='utf-8')
 	source_code = HtmlFile.read()
+	HtmlFile.close()
 	return source_code
 st.write("Data updated at " + update_data[0][2].strftime("%d %B %Y, %H:%M:%S"))
 components.html(mapfile(update_data[0][0]),height=600)
