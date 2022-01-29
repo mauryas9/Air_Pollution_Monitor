@@ -14,13 +14,13 @@ def JSON_Downloader():
 	limit=10
 	#Get Total Number of records and First set of records
 #	status.write("Getting Total Number of records and First set of records")
-	JSONContent = requests.get("https://api.data.gov.in/resource/3b01bcb8-0b14-4abf-b6f2-c1bfd384ba69?api-key=579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b&format=json&offset=0&limit=10").json()
+	JSONContent = requests.get("https://api.data.gov.in/resource/3b01bcb8-0b14-4abf-b6f2-c1bfd384ba69?api-key=579b464db66ec23bdd000001fac7277b9e444f4f5c1abfd7d2dc9105&format=json&offset=0&limit=10").json()
 	total=JSONContent['total']
 #	my_bar.progress(offset/total)
 #	status.write("Downloading "+str(offset)+ " of " + str(total) + " records")
 	#Build JSON file by Downloading Total no. of records.
 	while offset<total:
-		JSONContent1 = requests.get("https://api.data.gov.in/resource/3b01bcb8-0b14-4abf-b6f2-c1bfd384ba69?api-key=579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b&format=json&offset=" + str(offset) +"&limit=" + str(limit)).json()
+		JSONContent1 = requests.get("https://api.data.gov.in/resource/3b01bcb8-0b14-4abf-b6f2-c1bfd384ba69?api-key=579b464db66ec23bdd000001fac7277b9e444f4f5c1abfd7d2dc9105&format=json&offset=" + str(offset) +"&limit=" + str(limit)).json()
 		if 'error' not in JSONContent1:
 			offset = offset + limit
 			JSONContent['records']=[*JSONContent['records'] , *JSONContent1['records']]
